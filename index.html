@@ -461,7 +461,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
 
 <script>
 // ─── CONFIG ──────────────────────────────────────────────────────────────────
-const ADMIN_EMAIL     = "pietrosibillo591@gmail.com, beachsprintfano@gmail.com";
+const ADMIN_EMAIL     = "circolocanottierinesis@gmail.com, beachsprintfano@gmail.com";
 const PRICE = 15.00; // default fallback
 const PRICES = { "1x": 15.00, "2x": 30.00, "4x+": 60.00 };
 function getPrice(bt){ return PRICES[bt] || PRICE; }
@@ -1018,7 +1018,7 @@ async function doSend(){
     `BIC: UNCRITM1606\n` +
     `Reference: TRAINING RENTAL BACOLI ${club.name}\n\n` +
     `Please download, sign and send the waiver + proof of payment to:\n` +
-    `pietrosibillo591@gmail.com within 24 hours.`;
+    `circolocanottierinesis@gmail.com within 24 hours.`;
 
   let emailOk = false; // will be set by Apps Script
 
@@ -1181,7 +1181,7 @@ function generateWaiver(clubData, slots){
     "3. Costo EUR 15,00 a posto (timoniere escluso). Include remi e dotazioni di sicurezza.",
     "4. Confermato solo a ricevimento bonifico su IBAN IT20J0200803446000103488082 (BIC: UNCRITM1606). Causale: NOLEGGIO ALLENAMENTO + NOME SOCIETA'.",
     "5. Il richiedente si assume la responsabilita' per danni alle imbarcazioni e remi noleggiati.",
-    "6. Prenotazioni a: pietrosibillo591@gmail.com entro la scadenza.",
+    "6. Prenotazioni a: circolocanottierinesis@gmail.com entro la scadenza.",
     "7. Info: Pietro Sibillo +39 328 318 1129."
   ] : [
     "1. Training sessions are scheduled in SLOTS of 25 minutes of training and 5 minutes for boat changeover within different time windows.",
@@ -1189,7 +1189,7 @@ function generateWaiver(clubData, slots){
     "3. The rental cost is EUR 15.00 per seat (coxswain excluded). Rental includes oars and safety equipment.",
     "4. Rental confirmed only upon receipt of bank transfer to IBAN IT20J0200803446000103488082 (BIC: UNCRITM1606). Reference: TRAINING RENTAL and CLUB NAME.",
     "5. The applicant assumes full responsibility for any damage to rented boats and oars and agrees to reimburse repair costs upon request.",
-    "6. Bookings must be submitted by the deadline by email to: pietrosibillo591@gmail.com",
+    "6. Bookings must be submitted by the deadline by email to: circolocanottierinesis@gmail.com",
     "7. For info contact Pietro Sibillo at +39 328 318 1129."
   ];
   for(var i=0;i<terms.length;i++){ para(terms[i], 8); y+=1; }
@@ -1214,7 +1214,7 @@ function generateWaiver(clubData, slots){
   doc.setFont("helvetica","bold"); doc.setFontSize(8.5); doc.setTextColor(0,100,50);
   doc.text(lang==="it" ? "Invia questo modulo firmato + ricevuta del bonifico a:" : "Send this signed form + proof of bank transfer to:", ml+3, y+5);
   doc.setTextColor(0,0,0); doc.setFont("helvetica","normal");
-  doc.text("pietrosibillo591@gmail.com   " + (lang==="it" ? "entro 24 ore dalla prenotazione" : "within 24 hours of booking"), ml+3, y+11);
+  doc.text("circolocanottierinesis@gmail.com   " + (lang==="it" ? "entro 24 ore dalla prenotazione" : "within 24 hours of booking"), ml+3, y+11);
   y+=20;
 
   // SIGNATURES
@@ -1894,7 +1894,7 @@ function generateReceipt(clubName, referent, email){
   doc.setFont('helvetica','normal'); doc.setFontSize(9); doc.setTextColor(...MUTED);
   doc.text('ASS.NE POLISPORTIVA DILETTANTISTICA CIRC. CANOTTIERI NESIS', W/2, 24, {align:'center'});
   doc.text('Bacoli (NA) · 3ª tappa Filippi Trophy · 7–10 Maggio 2026', W/2, 29, {align:'center'});
-  doc.text('e-mail: pietrosibillo591@gmail.com', W/2, 34, {align:'center'});
+  doc.text('e-mail: circolocanottierinesis@gmail.com', W/2, 34, {align:'center'});
 
   // Gold line
   doc.setDrawColor(...GOLD); doc.setLineWidth(0.8); doc.line(ml, 38, W-mr, 38);
