@@ -1148,18 +1148,18 @@ function generateWaiver(clubData, slots){
 
   // PAYMENT
   section(lang==="it" ? "PAGAMENTO" : "PAYMENT DETAILS");
-  checkPage(30);
-  doc.setFillColor(255,253,245); doc.rect(ml,y-2,usable,34,"F");
-  doc.setDrawColor(201,160,82); doc.rect(ml,y-2,usable,34);
+  checkPage(42);
+  doc.setFillColor(255,253,245); doc.rect(ml,y-2,usable,40,"F");
+  doc.setDrawColor(201,160,82); doc.rect(ml,y-2,usable,40);
   doc.setFont("helvetica","bold"); doc.setFontSize(9); doc.setTextColor(150,100,0);
   doc.text(lang==="it" ? "ATTENZIONE: Bonifico entro 24 ore dalla prenotazione" : "WARNING: Bank transfer required within 24 hours of booking", ml+3, y+4);
   doc.setTextColor(0,0,0); doc.setFont("helvetica","normal"); doc.setFontSize(8.5);
   doc.text((lang==="it" ? "Beneficiario: Ass.ne Polisportiva Dilettantistica Circ. Canottieri Nesis" : "Beneficiary: Ass.ne Polisportiva Dilettantistica Circ. Canottieri Nesis"), ml+3, y+11);
-  doc.text("IBAN:  IT20J0200803446000103488082", ml+3, y+17);
-  doc.text("BIC:   UNCRITM1606", ml+3, y+23);
+  doc.text("IBAN:  IT20J0200803446000103488082", ml+3, y+18);
+  doc.text("BIC:   UNCRITM1606", ml+3, y+25);
   doc.setFont("helvetica","bold");
-  doc.text((lang==="it" ? "Causale:    NOLEGGIO ALLENAMENTO " : "Reference:  TRAINING RENTAL ") + (clubData.name||""), ml+3, y+29);
-  y+=32;
+  doc.text((lang==="it" ? "Causale:    NOLEGGIO ALLENAMENTO " : "Reference:  TRAINING RENTAL ") + (clubData.name||""), ml+3, y+33);
+  y+=44;
 
   // TERMS
   section(lang==="it" ? "TERMINI E CONDIZIONI" : "TERMS AND CONDITIONS");
@@ -1170,7 +1170,7 @@ function generateWaiver(clubData, slots){
     "4. Confermato solo a ricevimento bonifico su IBAN IT20J0200803446000103488082 (BIC: UNCRITM1606). Causale: NOLEGGIO ALLENAMENTO + NOME SOCIETA'.",
     "5. Il richiedente si assume la responsabilita' per danni alle imbarcazioni e remi noleggiati.",
     "6. Prenotazioni a: pietrosibillo591@gmail.com entro la scadenza.",
-    "7. Info: Viola Patrignani +39 338 3513103."
+    "7. Info: Pietro Sibillo +39 328 318 1129."
   ] : [
     "1. Training sessions are scheduled in SLOTS of 25 minutes of training and 5 minutes for boat changeover within different time windows.",
     "2. A maximum of 6 bookings for 1x, 5 for 2x, and 1 for 4x+ will be available per time window. Requests assigned in chronological order of bank transfers.",
@@ -1178,7 +1178,7 @@ function generateWaiver(clubData, slots){
     "4. Rental confirmed only upon receipt of bank transfer to IBAN IT20J0200803446000103488082 (BIC: UNCRITM1606). Reference: TRAINING RENTAL and CLUB NAME.",
     "5. The applicant assumes full responsibility for any damage to rented boats and oars and agrees to reimburse repair costs upon request.",
     "6. Bookings must be submitted by the deadline by email to: pietrosibillo591@gmail.com",
-    "7. For info contact training manager Viola Patrignani at +39 338 3513103."
+    "7. For info contact Pietro Sibillo at +39 328 318 1129."
   ];
   for(var i=0;i<terms.length;i++){ para(terms[i], 8); y+=1; }
 
@@ -1863,9 +1863,9 @@ function generateReceipt(clubName, referent, email){
   doc.setFont('helvetica','bold'); doc.setFontSize(18); doc.setTextColor(...DARK);
   doc.text("Filippi Trophy Bacoli 2026", W/2, 18, {align:"center"});
   doc.setFont('helvetica','normal'); doc.setFontSize(9); doc.setTextColor(...MUTED);
-  doc.text('Associazione Sportiva Dilettantistica', W/2, 24, {align:'center'});
-  doc.text('Bacoli (NA) · 3° tappa Filippi Trophy', W/2, 29, {align:'center'});
-  doc.text('e-mail: pietrosibillo591@gmail.com · www.rowingclubadriatico.it', W/2, 34, {align:'center'});
+  doc.text('ASS.NE POLISPORTIVA DILETTANTISTICA CIRC. CANOTTIERI NESIS', W/2, 24, {align:'center'});
+  doc.text('Bacoli (NA) · 3ª tappa Filippi Trophy · 7–10 Maggio 2026', W/2, 29, {align:'center'});
+  doc.text('e-mail: pietrosibillo591@gmail.com', W/2, 34, {align:'center'});
 
   // Gold line
   doc.setDrawColor(...GOLD); doc.setLineWidth(0.8); doc.line(ml, 38, W-mr, 38);
