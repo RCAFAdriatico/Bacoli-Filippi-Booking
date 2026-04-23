@@ -1019,6 +1019,7 @@ async function doSend(){
       slots: myCart.map(c => ({
         boat:c.boat, dayLabel:c.dayLabel, sessLabel:c.sessLabel,
         start:c.slots?.start||"", end:c.slots?.end||"", dk:c.dk, slotMin:c.slotMin,
+        price: getPrice(c.boat),
       })),
     }));
     await fetch(APPS_SCRIPT_URL, { method:"POST", mode:"no-cors", body:fd });
@@ -2016,7 +2017,7 @@ async function doMoveSlot(oldDk, oldSlotMin, boat, clubName, referent, email){
 
     await callScript({action:"book", club:clubName, referent, email, phone:"",
       slots:[{boat, dayLabel:newDateLabel, sessLabel:newSessLabel,
-              start:newStart, end:newEnd, dk:newDk, slotMin:newSlotMin}]});
+              start:newStart, end:newEnd, dk:newDk, slotMin:newSlotMin, price: getPrice(boat)}]});
   } catch(e){ console.error(e); }
 
   document.getElementById('move-modal').remove();
