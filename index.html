@@ -509,7 +509,7 @@ function defaultSessionConfig(){
     ]},
   ];
 }
-const SESSION_CONFIG_VERSION = "v7"; // increment to force reset
+const SESSION_CONFIG_VERSION = "v8"; // increment to force reset
 function loadSessionConfig(){
   try {
     const ver = localStorage.getItem('sessionConfigVersion');
@@ -1707,9 +1707,9 @@ function applyLang(){
       : 'https://rcafadriatico.github.io/Bacoli-Filippi-Booking/user_guide.pdf';
     gl.textContent = '📄 ' + (lang==='it' ? 'Guida Utente' : 'User Guide');
   }
-  // SESSIONS labels — 5 giorni (Lun-Ven)
-  const dayKeys = ['monday','tuesday','wednesday','thursday','friday'];
-  const dateKeys = ['dateMonday','dateTuesday','dateWednesday','dateThursday','dateFriday'];
+  // SESSIONS labels — Giovedì + Venerdì
+  const dayKeys = ['thursday','friday'];
+  const dateKeys = ['dateThursday','dateFriday'];
   SESSIONS.forEach((sess, idx) => {
     if(idx < dayKeys.length){
       sess.dayLabel  = t(dayKeys[idx]);
